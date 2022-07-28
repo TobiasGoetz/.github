@@ -1,0 +1,20 @@
+mode: auto
+
+branchName: 'i${issue.number}-${issue.title[0,64],}'
+
+gitSafeReplacementChar: '-'
+
+defaultBranch: 'develop'
+
+silent: true
+autoCloseIssue: true
+
+branches:
+  - label:
+      - enhancement
+    prefix: feature/
+  - label:
+      - bug
+    prefix: bugfix/
+  - label: '*'
+    skip: true
