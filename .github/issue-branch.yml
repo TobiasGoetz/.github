@@ -11,10 +11,23 @@ autoCloseIssue: true
 
 branches:
   - label:
-      - enhancement
-    prefix: feature/
+      - bug
+      - production
+    prefix: hotfix/
+    name: main
+    prTarget:
+      - main
+      - develop
   - label:
       - bug
+      - development
     prefix: bugfix/
+    name: develop
+    prTarget: develop
+  - label:
+      - enhancement
+    prefix: feature/
+    name: develop
+    prTarget: develop
   - label: '*'
     skip: true
