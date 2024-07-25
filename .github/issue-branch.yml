@@ -1,33 +1,36 @@
 mode: auto
 
-branchName: 'i${issue.number}-${issue.title[0,64],}'
+branchName: '${issue.number}-${issue.title[0,64],}'
 
 gitSafeReplacementChar: '-'
 
+# silent: true # Remove comments by the app
+autoLinkIssue: true
+autoCloseIssue: true
+
 defaultBranch: 'develop'
 
-silent: true
-autoCloseIssue: true
+conventionalPrTitles: true
+
+copyIssueDescriptionToPR: true
+copyIssueLabelsToPR: true
+copyIssueAssigneeToPR: true
+copyIssueProjectsToPR: true
+copyIssueMilestoneToPR: true
 
 branches:
   - label:
-      - bug
-      - production
-    prefix: hotfix/
-    name: main
-    prTarget:
-      - main
-      - develop
+      - Epic
+    skip: true
   - label:
       - bug
-      - development
-    prefix: bugfix/
     name: develop
+    prefix: bugfix/
     prTarget: develop
   - label:
       - enhancement
-    prefix: feature/
     name: develop
+    prefix: feature/
     prTarget: develop
   - label: '*'
     skip: true
